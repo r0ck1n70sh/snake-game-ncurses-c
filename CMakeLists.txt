@@ -4,9 +4,13 @@ set(CMAKE_C_STANDARD 99)
 
 project(snake-game-ncurses-c)
 
+FILE(GLOB GEOMETRY_LIB src/geometry/*.c)
+FILE(GLOB RENDER_LIB src/render/*.c)
+
 add_library(snake-game-ncurses-c
 	STATIC
-	src/geometry/point.c
+	${GEOMETRY_LIB}
+	${RENDER_LIB}
 )
 
 target_include_directories(snake-game-ncurses-c
