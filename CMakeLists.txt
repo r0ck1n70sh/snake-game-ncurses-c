@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26.4)
+cmake_minimum_required(VERSION 3.0.0)
 
 set(CMAKE_C_STANDARD 99)
 
@@ -6,11 +6,13 @@ project(snake-game-ncurses-c)
 
 FILE(GLOB GEOMETRY_LIB src/geometry/*.c)
 FILE(GLOB RENDER_LIB src/render/*.c)
+FILE(GLOB GAME_LIB src/game/*.c)
 
 add_library(snake-game-ncurses-c
 	STATIC
 	${GEOMETRY_LIB}
 	${RENDER_LIB}
+	${GAME_LIB}
 )
 
 target_include_directories(snake-game-ncurses-c
@@ -31,4 +33,3 @@ endif()
 
 
 target_link_libraries(out snake-game-ncurses-c)
-
